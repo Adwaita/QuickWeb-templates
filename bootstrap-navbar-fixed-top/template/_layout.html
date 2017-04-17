@@ -1,0 +1,11 @@
+<%inherit file="_global.html"/>
+
+<%block name="layout_css_files">
+    <link rel="stylesheet" type="text/css" href="/css/navbar-fixed-top.css">
+</%block>
+
+<%include file="_navbar.html" />
+
+<div class="container">
+    ${next.body()}
+</div>
