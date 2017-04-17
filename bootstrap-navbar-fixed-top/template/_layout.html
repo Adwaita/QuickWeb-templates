@@ -1,4 +1,5 @@
 <%inherit file="_global.html"/>
+<% vars = data_provider('webroot/_global') %>
 
 <%include file="_navbar.html" />
 
@@ -6,4 +7,6 @@
     ${next.body()}
 </div>
 
-<%include file="_footer.html" />
+% if vars['place_footer']:
+    <%include file="_footer.html" />
+% endif
