@@ -13,11 +13,8 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         {% for item in navigation_items %}
-        <li
-          {% if current_path() == item.link[1:] %}
-          class ="active"
-          {% endif %}
-          ><a href="{{ item.link }}">{{ item.name or item.link[1:] }}</a>
+        <li>
+          <a href="{{ item.link }}">{{ item.name or item.link[1:] }}</a>
         </li>
         {% endfor %}
       </ul>
