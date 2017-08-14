@@ -24,15 +24,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <!-- Add the 'active' class to the navigation item based on the current url -->
-    <script type="text/javascript">
-      $(document).ready(function () {
-          var url = window.location;
-          $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
-          $('ul.nav a').filter(function() {
-               return this.href == url;
-          }).parent().addClass('active');
-      });
-  </script>
+    <!-- Set 'active' class to the navigation item based on the current url -->
+    <script src="js/navbar-active-item.js"></script>
   </body>
 </html>
