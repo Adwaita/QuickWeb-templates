@@ -1,0 +1,44 @@
+{% for post_group in posts %}
+<!-- A wrapper for all the blog posts -->
+<div class="posts">
+    <h1 class="content-subhead">{{ post_group.subhead }}</h1>
+
+    {% for post in post_group.posts %}
+    <!-- A single blog post -->
+    <section class="post">
+        <header class="post-header">
+            <img width="48" height="48" alt="{{post.author}} avatar" class="post-avatar" src="{{ post.avatar_img }}">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <p class="post-meta">
+                By <a href="#" class="post-author">{{ post.author }}</a> under
+                {% for category in post.categories %}
+                <a class="post-category post-category{{ category.html_class }}" href="{{ category.link or "#" }}">{{ category.name }}</a>
+                {% endfor %}
+            </p>
+        </header>
+
+        <div class="post-description">
+            {% if post.description is defined %}
+            {{ post.description | markdown }}
+            {% endif %}
+            {% if post.images is defined %}
+            <div class="post-images pure-g">
+                {% for image in post.images %}
+                <div class="pure-u-1 pure-u-md-1-2">
+                    <a href="{{ image.link }}">
+                        <img alt="{{ image.alt }}"
+                                class="pure-img-responsive"
+                                src="{{ image.src }}">
+                    </a>
+                    <div class="post-image-meta">
+                        <h3>{{ image.label }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        </div>
+    </section>
+    {% endfor %}
+</div>
+{% endfor %}
